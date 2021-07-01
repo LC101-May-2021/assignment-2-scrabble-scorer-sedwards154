@@ -112,7 +112,7 @@ function transform(ops) { // ops = oldPointStructure
   let nps = {};
   for (let key in ops) {
     for (let i = 0; i < ops[key].length; i++) {
-      nps[ops[key][i].toLowerCase()] = key;
+      nps[(ops[key][i]).toLowerCase()] = key;
     }
   }
   return nps;
