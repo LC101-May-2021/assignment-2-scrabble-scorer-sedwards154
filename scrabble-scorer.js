@@ -61,7 +61,7 @@ return score;
 function initialPrompt() {
    console.log("Let's play some Scrabble!")
    let word = (input.question("Enter a word to score:"));
-  console.log(scrabbleScore(word))
+  console.log(scorerPrompt(word))
 }
 
 function scrabbleScore(word){
@@ -92,7 +92,7 @@ let scoringAlgorithms = [
 }
 ]
 
-function scorerPrompt(word)  {
+function scorerPrompt(word) {
   console.log("Which scoring algorithm would you like to use?\n")
   
   for (let i=0; i<scoringAlgorithms.length; i++) {
@@ -101,8 +101,7 @@ function scorerPrompt(word)  {
   }
 
   const num = input.question("Enter 0, 1, or 2:");
-  console.log (`Score for  ${word}': $
-  {scoringAlgorithms[num].scorerFunction(word)}`) 
+  console.log (`Score for  ${word}': ${scoringAlgorithms[num].scorerFunction(word)}`) 
 
   return (scoringAlgorithms[num])
   
