@@ -78,16 +78,16 @@ let scoringAlgorithms = [
 {
   name: "Simple Score",
   description: "Each letter is worth 1 point.",
-  scorerFunction: simpleScore,
+  scoringFunction: simpleScore,
 },
 {
-  scorerFunction: vowelBonusScore,
+  scoringFunction: vowelBonusScore,
   name: "Bonus Vowels ",
   description: "Vowels are 3 pts, consonants are 1 pt.",
 },
 {
   name: "Scrabble ",
-  scorerFunction: scrabbleScore,
+  scoringFunction: scrabbleScore,
   description: "The traditional scoring algorithm." 
 }
 ]
@@ -101,7 +101,7 @@ function scorerPrompt(word) {
   }
 
   const num = input.question("Enter 0, 1, or 2:");
-  console.log (`Score for  ${word}': ${scoringAlgorithms[num].scorerFunction(word)}`) 
+  console.log (`Score for  ${word}': ${scoringAlgorithms[num].scoringFunction(word)}`) 
 
   return (scoringAlgorithms[num])
   
