@@ -61,7 +61,7 @@ return score;
 function initialPrompt() {
    console.log("Let's play some Scrabble!")
    let word = (input.question("Enter a word to score:"));
-  console.log(scorerPrompt(word))
+  
 }
 
 function scrabbleScore(word){
@@ -112,7 +112,7 @@ function transform(ops) { // ops = oldPointStructure
   let nps = {};
   for (let key in ops) {
     for (let i = 0; i < ops[key].length; i++) {
-      nps[(ops[key][i]).toLowerCase()] = key;
+      nps[ops[key][i].toLowerCase()] = Number(key);
     }
   }
   return nps;
@@ -123,7 +123,7 @@ let newPointStructure = transform(oldPointStructure);
 
 
 function runProgram() {
-   initialPrompt();
+  //  scorerPrompt(word)
    
 }
 
